@@ -1,0 +1,44 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Lounge Chair and Ottoman",
+      "description": "The world's most famous chair.",
+      "price": "5495.00",
+      "shippingCost": "99.99",
+      "image": "https://picsum.photos/100/50?random=1&blur=1"
+    },
+    {
+      "id": "2",
+      "name": "Molded Plastic Armchair 4-Leg Base",
+      "description": "A colorful plastic seat.",
+      "price": 300.00,
+      "shippingCost": 50.00,
+      "image": "https://picsum.photos/100/51?random=1&blur=1"
+    },
+    {
+      "id": "3",
+      "name": "Molded Plastic Armchair Rocker",
+      "description": "A colorful armchair rocker.",
+      "price": "745.00",
+      "shippingCost": "99.99",
+      "image": "https://picsum.photos/100/52?random=1&blur=1"
+    },
+    {
+      "id": "4",
+      "name": "Molded Plywood Coffee Table",
+      "description": "A coffee table made from molded wood.",
+      "price": "1009.00",
+      "shippingCost": "99.99",
+      "image": "https://picsum.photos/100/53?random=1&blur=1"
+    },
+    {
+      "id": "5",
+      "name": "Rectangular Coffee Table",
+      "description": "A sturdy coffee table",
+      "price": "1000.00",
+      "shippingCost": "99.99",
+      "image": "https://picsum.photos/100/54?random=1&blur=1"
+    }
+  ]
+}
