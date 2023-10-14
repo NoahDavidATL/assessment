@@ -1,6 +1,6 @@
 import React from 'react'
 import Product from './Product'
-import product_data from './product_data'
+import product_data from './api/product_data'
 
 class ProductList extends React.Component {
   constructor(props) {
