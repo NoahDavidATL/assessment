@@ -1,40 +1,37 @@
-import React from 'react'
-import Product from './Product'
-import product_data from './api/product_data'
+import React, { useState, useEffect } from 'react';
+import Product from './Product';
+import product_data from './api/product_data';
 
-class ProductList extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      products: [],
-      loading: true
-    }
+const ProductList = () => {
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setProducts(product_data.products);
+      setLoading(false);
+      }, 1500);
+    return () => clearTimeout(timer); /* clear the timer to prevent memory leaks */
+  }, []);
+
+  if (loading) {
+    return <div className="Product-list"><p className="Loading">Loading...</p></div>;
   }
-  componentDidMount() {
-    setTimeout(() => {
-      this.setState({
-        products: product_data.products,
-        loading: false
-      })
-    }, 1500)
-  }
-  render() {
-    if (this.state.loading) return <div className="Product-list"><p className="Loading">Loading...</p></div>
-    return (
-      <div className="Product-list">
-        {this.state.products.map(item =>
-          <Product
-            key={item.id}
-            name={item.name}
-            description={item.description}
-            price={item.price}
-            image={item.image}
-            shippingCost={item.shippingCost}
-          />
-          )}
-      </div>
-      );
-  }
-}
+
+  return (
+    <div className="Product-list">
+      {products.map(item => (
+        <Product
+          key={item.id}
+          name={item.name}
+          description={item.description}
+          price={item.price}
+          image={item.image}
+          shippingCost={item.shippingCost}
+        />
+        ))}
+    </div>
+    );
+};
 
 export default ProductList;
