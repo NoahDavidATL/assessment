@@ -1,7 +1,12 @@
 import React from 'react';
 import Image from 'next/image';
+import { Total } from './Total'
 
-const Product = ({ image, name, description, price, shippingCost }) => {
+const Product = (props) => {
+
+  /* deconstruct the props and shorten the length for Total */
+  const { image, name, description: desc, price, shippingCost: shipping } = props;
+
   return (
     <div className="Product">
       <Image
@@ -11,11 +16,8 @@ const Product = ({ image, name, description, price, shippingCost }) => {
         height={500}
       />
       <h4>{name}</h4>
-      <p>{description}</p>
-      <div>
-        <p>{price}</p>
-        <p>{shippingCost}</p>
-      </div>
+      <p>{desc}</p>
+      <Total {...props} />
     </div>
     );
 };
